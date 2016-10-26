@@ -1,0 +1,94 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{graphicx}                                        
+\usepackage{amssymb}                                         
+\usepackage{amsmath}                                         
+\usepackage{amsthm}                                          
+
+\usepackage{alltt}                                           
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+\usepackage{booktabs}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\newcommand{\toc}{\tableofcontents}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{parskip}
+
+\def\name{}
+
+%pull in the necessary preamble matter for pygments output
+%\input{pygments.tex}
+
+
+\parindent = 0.0 in
+\parskip = 0.1 in
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+    \textsc{\LARGE CS 461 - Fall 2016 - Problem Statement}
+
+    \textsc{Group 32}
+
+    \emph{Member:}
+    Basil Al Zamil,
+    Xilun Guo, and
+    Tanner Fry
+    \setlength{\parskip}{20pt}
+
+\textsc{ \large  ABSTRACT}
+\end{center}
+
+In 2015 a beta version of Tesla’s AutoPilot self-driving car system crashed into the side of a semi-truck on the freeway, the cause was attributed to the software recognizing the side of the semi as a cloud rather than a white semi-trailer. The primary goal of the project is to collect a dataset of real-world driving scenarios (images, video, and sensor data) where potentially problematic objects are in a frame along with bad weather and lighting scenarios. For example wildlife such as deer, cows, and birds need to be correctly identified, along with landmarks of odd shapes such as sculptures in all sorts of lighting and weather conditions. Then we test whether current self-driving car software can detect, recognize, and accurately maneuver around unexpected and or unordinary objects. Specifically, we look at autonomous driving algorithms capability to comprehend objects given particular world conditions (such as lighting, rain, water, snow, etc). 
+\end{titlepage}
+
+\newpage
+
+\textsc{\large PROBLEM DEFINITION}
+
+The improvement we are trying to make comes from the Tesla Autodrive crash incident in which the auto drive system in the vehicle recognized a white semi as a cloud. We believe that there are more flaws that exist in the image recognition algorithms. That being said, “Tesla Motors CEO Elon Musk’s prediction that the technology for fully autonomous cars—those that require no driver supervision—will be ready by about 2020” [Bosch, Fortune.com]. So it is imperative that work is done on these image recognition algorithms to improve them for the near future when autonomous cars are prevalent on the road. The algorithm we will be using is created by cityscapes, and they run a comprehensive suite of tests to check the algorithms performance. To help avoid and prevent future self-driving vehicle failures (and potentially save lives), we want to find and solve these flaws. The main area of focus will be on lighting, bad weather conditions, and unusual objects that the algorithms might not be able to handle correctly. In the Tesla crash, it was found that a particular angle of light reflecting off the surface of the semi-truck caused the incorrect object recognition of a cloud. Another company that is focusing on object recognition rather than full image recognition is Mobileye five. They have their dataset of Artificial Vision Technology. Specifically, tracking speed limit sign, objects on the road surrounding the vehicle as well as lane departure. 
+
+Autodrive, Self-driving, and Autopilot are all used interchangeably to describe the usage of the image and object recognition algorithms. However, Autopilot is the official name of Tesla system we discuss above. Algorithms specifically references the CityScapes algorithm set which we will be using primarily for our testing.\newline
+
+
+\textsc{\large PROBLEM SOLUTION}
+
+Because of the nature of our problem we have a primary goal and a stretch goal. Our main objective is to collect enough images, videos, and data sets (data sets being a collection of videos) that we find areas of failure in the image recognition algorithms used in the Auto Drive systems. Our first step is to test the algorithms with pre-existing datasets. Assuming those pass, we will then collect our data sets using a camera system and a vehicle and run them through the same image recognition algorithms. The algorithms must be executed and watched to verify that the systems do not fail to recognize an object correctly. For instance, sunlight reflecting on a wet road might blind the camera system and cause points of failure in the algorithm. Alternatively, an odd shaped statue might be interpreted as something other than a solid object that should not be driven over. 
+
+Our stretch goal is to find the points of fault in the Autodrive algorithms and modify the algorithm to not make the same mistake again or at least improve the system as a whole to avoid failure. The stretch goal success is dependent on multiple factors including the scale of the dataset we find to have the failure, availability of the algorithm source code, and acceptance by the host companies. This is an addition and not mandatory to complete the project and meet our Client’s guidelines and expectations.\newline
+
+
+\textsc{\large PERFORMANCE METRICS}
+
+The goal of our project is to find flaws within the image recognition software where it fails to drive safely given an expected object or severe driving conditions. Hence, we would measure the success of our project based on whether or not we would be able to repeatedly have the software fail to identify the objects under specific weather conditions or find objects that the software cannot identify to avoid. For example, the software may fail to determine the side of a white truck in heavy rain conditions. Our goal is to find a repeatable error in the image recognition algorithms to the extent that a self-driving vehicle might make a critical driving mistake, such as the Tesla crash that took a person's life.
+
+Our stretch goal is to improve the software, such that it will not have issues under conditions that it was failing with before. Hence, for our stretch goal, we would measure our success based on whether we can repeatedly prove that the software is able to determine the objects that it was failing to identify under the same conditions.
+
+As another basis of performance we can run against CityScapes metric measurement system. They use pixel-level semantic labeling for object recognition. Then apply “standard Jaccard Index, commonly known as the PASCAL VOC intersection-over-union metric IoU=TP/(TP+FP+FN) [1], where TP, FP, and FN are the numbers of true positive, false positive, and false negative pixels, respectively, determined over the whole test set” to analyze the algorithm performance [Cityscapes.com]. 
+
+\newpage
+\nocite{r1}. \nocite{r2}. \nocite{r3}
+\bibliographystyle{IEEEtran}
+\bibliography{reference.bib}
+
+
+
+
+\end{document}
