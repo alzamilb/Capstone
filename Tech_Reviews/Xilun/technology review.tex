@@ -45,7 +45,7 @@
 
 \IEEEtitleabstractindextext{
 	\begin{abstract}
-    I, Xilun Guo, am going to be responsible of the Algorithm testing within several different environment conditions(sunny, rainy, and snowy) testing, camera blind spot(too close to see) conditions testing, objects testing, and the ways to quantify and verify the tests for our project.  
+    The aim of my tech review research is to figure out the ways to test the Algorithm within several different conditions. There are environment conditions(sunny, rainy, and snowy) testing, camera blind spot(too close to see stationary object) conditions testing, objects testing(avoid moving object), and the ways to quantify and verify the tests for our project.   
 	\end{abstract}
 }
 
@@ -62,50 +62,51 @@
 \newpage
 
 \section{Environment Conditions Testing}
-We gather on road data set in different area with various weather conditions, not limited in Oregon, and filter useful categories based on camera setup and professorial quality video outcome. Applying the existing machine learning algorithm in CityScape to the data we have is the final step before this testing. In the environment conditions testing, we will divide into three main bad weather categories, which could brake the algorithm with higher possibility then normal. There are Rainy, Snowy, and Sunny.
+We gather on road data set in a different area with various weather conditions, not limited in Oregon, and filter useful categories based on camera setup and professorial quality video outcome. Applying the existing machine learning algorithm in CityScape to the data we have is the final step before this testing. In the environment conditions testing, we will divide into three main severe weather categories, which could break the algorithm with higher possibility than normal. There are Rainy, Snowy, and Sunny.
 
 \subsection{Rainy Condition}
-Similar as human eyes, video can not clearly catch the situations while heavy raining condition, and video is even worse than human eyes. Considering ultrasonic and camera working together in self-driving car, but video is more precise to predict the next movement, we need to test if video can at least record basic information to avoid crashing or any dangerous action by applying the algorithm. Considering the worst case, in the continuing heavy raining condition, camera is limited by record the on road discontinuously. We are going to test if the algorithm can handle if the camera can't see very 0.5 second in 1 second by taking out half image data continuously.    
+Similar to human eyes, video can not clearly catch the situations while heavy raining condition, and video is even worse than human eyes. Considering ultrasonic and camera working together in the self-driving car, but the video is more precise to predict the next movement, we need to test if the video can at least record basic information to avoid crashing or any serious action by applying the algorithm. Considering the worst case, which is the continuing heavy raining condition, a camera might be limited by the discontinuously recording on the road. We are going to test if the algorithm can handle if the camera cannot see very 0.5 second in 1 second by taking out half image data continuously.    
 
 \subsection{Snowy Condition}
-Snowing is just like raining condition, but it makes camera harder to see. Just like the rainy condition, but might be hard to have camera to see for longer period of time. We will delete the image record by 0.5+ second in every 1 second, to see how often does the algorithm rely on the image, and how poor condition it could still make the safe outcome.  
+Snowing is just like rainy condition, but it makes camera harder to see. Just like the rainy condition, but might be hard to have a camera to see for a longer period. We will delete the image record by 0.5+ second in every 1 second, to see how often does the algorithm rely on the picture, and how poor condition it could still make the safe outcome. 
 
 \subsection{Sunny Condition}
-Lighting may affect the camera can not catch partial image on the road, we need to see if the algorithm could store the image data before camera can't see and make some safe reaction. In this case, we are going to take out consistent long period of time, which is around 5+ seconds, to see if the algorithm can still make the reaction while no a long period of time of video record.
+Lighting may affect the camera can not catch a partial image on the road, we need to see if the algorithm could store the image data before camera cannot see and make some safe reaction. In this case, we are going to take out long consistent period, which is around 5+ seconds, to see if the algorithm can still make the reaction while no an extended period of video record. 
 
 \subsection{Technology}
-Applying database technologies, Select each different weather conditions without overlap, and most other conditions are normal. Using machine learning algorithm to deal with the data, and see if the algorithm can provide safer output than before. As a result, focusing on the worst case, if the algorithm can store the current data and calculate base on the speed to react safely while bad image record happening, the bad weather conditions tests pass.
+Applying database technologies, Select each different weather conditions without overlap, and most other conditions are normal. Using machine learning algorithm to deal with the data, and see if the algorithm can provide safer output than before. As a result, focusing on the worst case, if the algorithm can store the current data and calculate base on the speed to react safely while bad image record is happening, the severe weather conditions tests pass.
 
 %%%%%%%%%%%%%%%%
 
 \section{Camera Blind Spot Conditions Testing}
-It is hard to see the objects outside of the main sight line; however, if the car isn't getting too close, the camera can catch the a block before approaching it. Therefore, the main goal for these conditions is to test if the algorithm can predict if the vehicle can pass or not before too close to see the block. There are only two situations: too wide and too high to record it while approaching.
+It is hard to see the objects outside of the main sight line; however, if the car is not getting too close, the camera can catch the block before approaching it. Therefore, the main goal for these conditions is to test if the algorithm can predict if the vehicle can pass or not before too close to see the block. There are only two situations: too wide and too high to record it while approaching.
 
 \subsection{narrow street with guardrail on two sides passing(limited wide)}
-We are going to set a chart and mark down the statistics of how wide base on the speed the camera can not record in how many meters the vehicle approach to. Using the algorithm, we want to test if it can predict the vehicle can or can not pass before approaching, and make a stop action or not.
+We are going to set a chart and mark down the statistics of how wide base on the speed the camera can not record in how many meters the vehicle approach to it. Using the algorithm, we want to test if it can predict the vehicle can or can not pass before approaching, and make a stop action or not.
 
 \subsection{Low bridge passing(limited high)}
-Same as the above situation; however, it is recording the statistics of how high base on the speed the camera can not record. 
+It is the same situation as the above; however, it is recording the statistics of the height base on the speed the camera can not record. 
 
 \subsection{Technology}
-Using unit testing technology to set up some blocks that the vehicle can not pass through, and test the algorithm many times in one specific conditions to see if it brakes the system and makes a crash. Then we keep changing the high or wide, and continue testing.
+Using unit testing technology to set up some blocks that the vehicle can not pass through, and test the algorithm many times in one specific condition to see if it brakes the system and makes a crash. Then we keep changing the high or wide and continue testing.
 
 %%%%%%%%%%%%%%%%%%
 
 \section{Objects Testing}
-Comparing to stationary objects, moving objects require more reaction from the algorithm. There are thousands of conditions can lead accidents from moving objects. We are going to test a couple: little kids suddenly cross to the street and the vehicle with a strip of bar in front of our car.   
+Comparing to unmoving objects, moving objects require more reaction from the algorithm. There are thousands of conditions can lead accidents from moving objects. We are going to test a couple: little kids suddenly cross the street and the vehicle with a strip of a bar in front of our car.   
 \subsection{Little kids}
-While driving in the street, suddenly insert a little object, representing kids, in x meters front of the car. Base on the speed of reaction from the algorithm, testing what is the range of distance that the car can stop and avoid hit the object.
+While driving down the street, suddenly insert a little object, representing kids, in x meters front of the car. Base on the speed of reaction from the algorithm, testing what is the range of distance that the car can stop and avoid hit the object.
 
 \subsection{Small objects}
 Small objects could be animals or some unusual small things that moving in the street, and we mainly test how quick the algorithm can make the reaction to avoid those objects that cause accidents.
 
 \subsection{Technology}
-By applying random testing, and using 3D image technology in order to setup some dangerous environments such as the moving objects cause car accident. Randomly set up various of conditions that objects suddenly appear to the front of cars, and test how quick the algorithm make its reaction until stop the car.
+By applying random testing, and using 3D image technology to set up some dangerous environments such as the moving objects cause a car accident. Randomly set up various of conditions that objects suddenly appear to the front of cars, and test how quick the algorithm make its reaction till stop the vehicle.
+
 %%%%%%%%%%%%%%%%%%%%
 
 \section{Tests Prov Plan}
-It is extremely important to have the technology to verify each section of tests. Setting a plan for all ideal and achievable results that proving if the test pass, then the algorithm react safely with the conditions we tested. On the other hand, if the existing test fail to pass and out of setting safe range, then the conditions could possibility brake the algorithm and we will plan further to fix it up. Moreover, we might need addition testing to confirm that the fixed algorithm can hundred percent handle the conditions, which braked the system before.    
+It is critical to have the technology to verify each section of tests. Setting a plan for all ideal and achievable results that are proving if the test pass, then the algorithm reacts safely with the conditions we tested. On the other hand, if the current test fail to pass and out of setting safe range, then the conditions could possibility break the algorithm and we will plan further to fix it up. Moreover, we might need addition testing to confirm that the fixed algorithm can help hundred percent handle the conditions, which braked the system before.    
 %\subsection{Data Store and React Later}
 
 %\subsection{Predict action}
