@@ -42,7 +42,7 @@
     The scripts themselves are broken down into five main parts. Viewer scripts are designed to view the images and annotations within the datasets. Helper scripts and files are included by other scripts to support functionality. Preparation scripts are used to convert the "ground truth" annotation into a format used by the specific algorithms approach. Evaluation scripts are for validating of image recognition methods. And finally an annotation branch of scripts are used for labeling datasets passed through the code.
     Thankfully the writers of the scripts also stuck a basic documentation level at the top. Along with this is a list of the core scripts we will need to use per dataset.
     \subsection{Evaluation}
-    Once we intend to run out datasets through the provided code we will need to run it though the provided test images and submit our results to \url{http://www.cityscapes-dataset.net/submit/}. The Cityscape team is interested in points of failure in both other people's approach on their own. The results need to be formated in the label image names as labelIDs as per standard of the Cityscapes team. Basically the images produced from our testing should have a pixel value class ID defined in labels.py. 
+    Once we intend to run out datasets through the provided code we will need to run it though the provided test images and submit our results to \url{http://www.cityscapes-dataset.net/submit/}. The Cityscape team is interested in points of failure in both other people's approach on their own. The results need to be formated in the label image names as labelIDs as per standard of the Cityscapes team. The images produced from our testing should have a pixel value class ID defined in labels.py. 
     \subsection{Development Environment}
     At the highest level the system should work with any machine or system that can run python scripting. That being said there are a lot of options with a lot of positives and negatives. For example on a Windows based system it will be a lot easier to migrate between using school and personal computers as most Engineering computers at OSU are Windows based. That being said both of my colleagues have Apple computers so using a OSX system also brings its own host of conveniences. However bouncing between systems might just be required as we are sharing the project, at which point setting up multiple environments is part of the overhead. From personal work experience it will take almost twice the time to figure out how to get the system working on more than one operating system.\\
     Researching for the best Integrated Development Environment (IDE) turned up to be easy. Some of the main options were PyDev \url{http://www.pydev.org/} a simplified IDE for Python development, it plugs into Eclipse and is relatively simple to run. Another high profile option is PyCharm \url{https://www.jetbrains.com/pycharm/} which is an expansion of Jet Brains line of IDE options. I believe the later is our best option as it comes with the complete "package" of utility we need. It has a Python assistant, cross-technology development, and built-in development tools. Not to mention it is similar to the IntelliJ framework my team used in Software Development I. 
@@ -102,6 +102,25 @@ Next we need to be able to detect faults in the image recognition software. Assu
 \newcommand{\finalreportdue}{2017-06-12}          % finals week of spring term
 \newcommand{\lastdayofspringterm}{2017-06-16}     % last day of spring term
 
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{Sources}
+\begin{thebibliography}{12}
+\bibitem{PyCharm} 2000—2016 JetBrains s.r.o. All rights reserved. Developed with drive and IntelliJ IDEA
+\textit{Jet Brains at PyCharm.com}
 
+\bibitem{Pydev}  Brainwy Software Ltda, 2014-2016
+\textit{Brainwy at Pydev.org} 
+
+\bibitem{Cityscapes Scripts} https://github.com/mcordts/cityscapesScripts.
+\textit{Part of the Cityscapes team} Marius Cordts, Mohamed Omran.
+
+\bibitem{Cityscapes} https://www.cityscapes-dataset.com/
+\textit{Cityscapes subset of Daimler} 2016 Cityscapes Dataset · by Marius Cordts 
+
+\bibitem{Dr. Pedro Kroger} http://pedrokroger.net/choosing-best-python-ide/
+\textit{Choosing the Best Python IDE} Dr. Pedro Kroger
+
+\end{thebibliography}
 
 \end{document}
