@@ -1,0 +1,16 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Goal}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Definitions}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}Technology Overview}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Algorithms testing}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Hardware}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Software Overhead}{4}{subsection.2.3}
+\contentsline {section}{\numberline {3}Method Overview}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Theory}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Hypothesis}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Methodology}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Testing}{5}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Data Analysis and Results}{6}{subsection.3.5}
+\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}
+\contentsline {section}{\numberline {5}Change Log}{6}{section.5}

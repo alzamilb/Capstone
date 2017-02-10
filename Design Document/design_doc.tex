@@ -58,28 +58,28 @@ Cityscapes is a subset of Daimler Automotive Company that is creating datasets a
 
 \section{Technology Overview}
 \subsection{Algorithms testing}
-There are three major milestones for the algorithm testing process. Environment conditions testing, camera blind spot conditions testing, and unusual objects testing with those tests proof plan. We are planning to keep collecting on road images and video data while working on testing.\\
-By applying database technologies we can collect different weather conditions and categorize them as such. Using machine learning algorithm to deal with the data we can see if the algorithm can provide a safer output than before. As a result, focusing on the worst case, if the algorithm can store the current data and calculate (based on the speed) to react safely while bad image record is happening. If it can do that within the given limitation of speed to distance to object then the severe weather conditions tests pass.\\
-Using unit testing to set some blocks that the vehicle can not pass through, and test the algorithm many times in one specific condition to see if it brakes the system and potentially causes a crash. Then we keep changing the variables in the test and continue testing.\\
-By using 3D image technology we can setup a test of moving unexpected objects and test them. Randomly set up various conditions where objects suddenly appear to the front of cars, and then test how quick the algorithm reaction and stops the vehicle. We put all these conditions onto the columns and all outputs onto the rows in the matrix so that we can combine the information and tell if any algorithms could cause a crash.\\
-Finally, we will set up a global matrix, and divide the columns onto three parts with weather conditions testing, camera blind spot testing, and unusual objects testing. In addition, dividing the rows onto three parts as well, for each testing outcome with the algorithms we have. We then put all conditions onto the columns and all output onto the rows in the matrix so that we can cross reference the information to tell if any algorithms could potentially crash. From that information we can try to determine which parts of the software algorithm we can try to fix.
+There are three major milestones for the algorithm testing process. Environment conditions testing and unusual objects testing. We are planning to keep collecting on road images and video data while working on testing.\\
+By applying database technologies we can collect different weather conditions and categorize them as such. Using machine learning algorithms to deal with the data we can see if the algorithm can provide a safer output than before. Note we are not concerned about real time (0.1 sec) algorithm speed. 
+We will primarily use parameter testing groups with many images in them. For example we have a full of images where it is snowing. Then we keep changing the variables in the test and continue testing.\\
+We can setup a test of moving unexpected objects and test them. Randomly set up various conditions where objects suddenly appear to the front of cars, and then test how quickly the algorithm reacts and stops the vehicle. We put all these conditions onto the columns and all outputs onto the rows in a matrix (more on this later) so that we can combine the information and tell if any algorithms could cause a crash.\\
+Finally, we will set up a global matrix, and divide the columns onto two parts with weather conditions testing and unusual objects testing. In addition, dividing the rows onto three parts as well, for each testing outcome with the algorithms we have. We then put all conditions onto the columns and all output onto the rows in the matrix so that we can cross reference the information to gain insight in how each algorithm performed and whether it is failing with a given condition. From that information we can try to determine which parts of the software algorithm we can try to fix.
 
 \subsection{Hardware}
 The hardware consists of the recording device: An HD dash camera, and storage unit: SD card and an external hard drive.\\
 The video footage that will be used to test the algorithms are primarily taken through the camera. The camera will be mounted on a car's windshield, and powered through a 12 volts outlet. The camera has a 170 degrees lens, which would capture a wider view of the road. The camera's recording dimension is 2306x1296P resolution. The camera can be used in both day and night time, since it supports night video recording.\\
 The SD card is of 128 GB, while can take up to 20 hours of video footage. The external hard drive, which is a 5 TB, will be used to store the footage from the SD card when the SD card is full. The footage has to be stored from the SD card roughly every 10 to 20 hours of video recording. Otherwise, the camera will overwrite the oldest file in the SD card.\\
 The camera is turned on manually before the driver starts to drive the car. The video recording would take place in both the day and the night. However, during the night time, the recording will be limited to the beam of headlights. Hence, video taking during the day is preferred. \\
-Video Taking will take place mostly in Oregon, including highways, freeways and country sides. Thus, will give us an opportunity to test different types of objects on the roads. \\
-After recording, we would test the image-recognition algorithms on different objects. Since we would have long videos with lots of images, we would fast forward and pause when we find unusual objects that we would suspect to fail the algorithm. For example, regular cars are most likely to be recognized by the algorithms, whereas unusual types of trucks can fail the algorithm.\\
-After finding a suspect object, we would use software, such as iMovie on Mac, to extract images out of the video. The extracted images are the input of the algorithms, and there format and pixels would be altered according to the algorithm testing software.\\
+Video recording will take place mostly in Oregon, including highways, freeways and country sides. Thus, will give us an opportunity to test different types of objects on the roads. \\
+After recording, we are going to test the image-recognition algorithms on different objects. Since there is so much footage we determined that the best method of analysis is to grab frames from the video feeds at an ten second interval and then down scale the image to something manageable for the hard to handle. For example, regular cars are most likely to be recognized by the algorithms, whereas unusual types of vehicals could fail to be given a label correctly.\\
+For all of our video frame capture we used VLC an open source tool for videos. For the image down scaling we used default OS tools and even some scripting for certain images.\\
 Additional videos will be requested from Oregon's Police Departments and Oregon State Car Club.
 
 
 \subsection{Software Overhead}
 The available algorithm sets run off mostly python scripting. 
 The code to handle different algorithm labeling and formats is available on GitHub at \url{github.com/mcordts/cityscapesScripts} with a decent amount of documentation alongside it. 
-This code is mostly for handling and setting up the image recognition code to run. However from my research the code is designed to only run with the Cityscapes datasets by default. 
-So a decent amount of overhead work will be required on our part to get the functionality in place that we need.
+This code is mostly for handling and analysis of other algorithms semantic labeling. However from my research the code is designed to only parse our with the CityScapes dataset by default. 
+A decent amount of overhead work will be required on our part to get the functionality in place that we need.
 Along with the documentation the team members at Cityscapes are more than happy to take questions, suggestions, or input should we run into any of the above.
 The scripts themselves are broken down into five main parts. 
 Viewer scripts are designed to view the images and annotations within the datasets. 
@@ -88,15 +88,15 @@ Preparation scripts are used to convert the "ground truth" annotation into a for
 Evaluation scripts are for validating of image recognition methods. 
 And finally an annotation branch of scripts are used for labeling datasets passed through the code.
 Thankfully the writers of the scripts also stuck a basic documentation level at the top. Along with this is a list of the core scripts we will need to use per dataset.\\
-After more thorough review of the algorithms available to us we determined that it would be best to try as many as possible.
+After more thorough review of the algorithms available to us we determined that it would be best to try only the best algorithms. 
 The main issue with this is that each algorithm available to us is from a different supplier and thus there is no consistency between setup and environment variables. 
 For example the Dilated Convolutions team requires the use of Anaconda (a Python compiler) and Caffe (a Python Utility) for using their algorithm. 
 This means we will have to run our testing methodologies across all the different algorithms that we test, so we will take on algorithms as we see fit. 
 This only includes options that there is code available for which can be found at \url{https://www.cityscapes-dataset.com/benchmarks/#scene-labeling-task} in the 'Code' column. 
 The datasets we collect need to be broken down into smaller chunks of frames, our aim is for one frame per ten seconds.
 That might not sound like much but for an hour of footage that adds up to 360 images to verify.
-We will also plan to handle any dataset file changes or conversions using tools provided by OSU and pull individual frames out.
 We have also been given permission by our client to acquire products if we deem them necessary, a video editing tool might be a possible purchase. 
+Please note many algorithms already have a pre-learned database for the CityScapes dataset. 
 
 
 \section{Method Overview}
@@ -130,6 +130,17 @@ From there, we can determine not only which factor failed in a given image, but 
 \section{Conclusion}
 We have described a direction of our project and some milestones with how we planned to process.
       
+      
+\section{Change Log}
+\begin{itemize}
+	\item Revised goals to be more focused on algorithm testing quality over number of algorithms tested.
+	\item Minor updating to definitions for accuracy.
+	\item Updated algorithms testing section to exclude camera blind spots, not something in our scope as of now.
+	\item Updated hardware and software information based on products we have used for certain tasks
+	\item Made changes to reflect that we are going to be testing algorithms from different developers and that those algorithms have their own machine learning knowledge base.
+	\item Added change log section 
+\end{itemize}
+
 \newpage
 % Remember to use PST-Gantt as Nels suggested for the gantt chart
 \newcommand{\firstdayoffallterm}{2016-09-21}      % first day of fall term
