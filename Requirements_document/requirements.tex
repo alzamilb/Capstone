@@ -43,22 +43,21 @@ Specifically, we look at autonomous driving algorithms capability to comprehend 
     \subsection{Main requirements}
 
     Our main requirements are limited by the bugs we find. The hard goal we have is to test the algorithms used by CityScape in autonomous vehicles. 
-Assuming there are issues with the image recognition algorithms under certain conditions, we must then collect the errors we find into a single dataset that the system fails with. 
+Assuming there are issues with the image recognition algorithms under certain conditions, we will collect our own data, and we must then collect the errors we find into a single dataset that the system fails to recognize certain objects in the images, which extracted from videos recorded on the road. 
     This can be set as a baseline of failure and be forwarded to the CityScape team. 
     This will also open us up to the possibility of modifying the algorithms used ourselves to try and fix the errors that we found. \\
-    We are required to use some strategies to collect as much data as possible in the amount of time for proving if there is a situation which could break the algorithm. 
+    We are required to use some strategies to collect as much data as possible in the amount of time for proving if there is a situation which could break the algorithms. 
     For example, trying to find some volunteers from different areas that allow us to place cameras onto their vehicles, thus we can collect the video feed from their driving experience. 
-    As a result, we will apply the algorithms from CityScape to analyze the data we collect. 
+    As a result, we will apply the algorithms from CityScape to analyze the data we collected. 
     Specifically, the data we are looking for is wide angle front image of a vehicle while driving within a bad digital visual field. 
-    In addition, some objects are too high or too low, which the camera might view but because of the angle or camera field of view the algorithms do not analyze the image correctly. \\
+    In addition, some objects are placed on too high or too low, which the camera might view but because of the angle or camera field of view the algorithms do not analyze the image correctly. \\
     They also could not respond quickly enough to react to driving conditions, which may lead to a car crash or to a dangerous situations. 
     This however is not in the scope of our project due to us not having availability of the hardware that the self driving system do.
     So while speed of the algorithm is something to consider with any code changes we make we do not a measurable metric to be limited by. 
-    Also consider that the speed the algorithm would need to function at to make the right decision is based on the speed at which the  vehicle is moving.
-    We will update if the hardware situation changes.
+    Also consider that the speed the algorithm would need to function at to make the right decision is based on the speed at which the vehicle is moving.
     
 \section{Nature of the Project Requirements}
-    \subsection{Environment  and Characteristics of Requirements}
+    \subsection{Environment and Characteristics of Requirements}
 	The project is research based and is focused on testing more so than code development.
     To that end we are required to have a thorough process for collecting data, processing data sets, and testing the software.
 	
@@ -75,12 +74,15 @@ Assuming there are issues with the image recognition algorithms under certain co
     
 \section{Requirement Specifications}
 	\subsection{Methodology}
-    Create video and image datasets and apply them to the CityScape algorithms for testing. 
+    Creating video, and extracting to image datasets and apply them to the CityScape algorithms for testing.
+    Setting up algorithms running environment, and having them to learn by applying some file from CityScape before running them.
     Then verify that all the datasets that we applied to the algorithm either succeed of fail.
     Thus we can safely assume the algorithm is relatively problem free or has flaws.
+    Comparing the algorithm results and actual results helps to find any unusual objects can't be recognized.
     Using the matrix system to record and gather data we can then verify if the object is the issue or the lighting/weather is to blame (or both).
     We can do this by running datasets with both cases individually and then in parallel to compare behavior and response of the algorithm.
     Thus have better feedback and understanding of the algorithm faults.
+    In order to analyze the results we got, we are required to do every single steps carefully so that we will be able to narrow down the possibilities and figure out what makes the unexpected results. 
     Along with that it will give us a better idea of what to change should we choose to edit the algorithm ourselves.
     \newline
     As an example of some of the targets we want to hit:
@@ -156,11 +158,16 @@ Assuming there are issues with the image recognition algorithms under certain co
     \ganttbar[name=requirements]{Requirements Document}{2016-10-26}{2016-11-04} \\
     \ganttbar{Algorithm analysis}{2016-10-25}{2016-11-25}\\
     \ganttbar{Design Document}{2016-11-10}{2016-12-04}\\
-    \ganttbar[name=data]{Data collection}{2016-11-15}{2017-2-15}\\
-    \ganttbar[name=rainy]{Data from raining condition}{2016-12-05}{2017-01-15} \\
-    \ganttbar[name=snowy]{Data from snowing condition}{2016-11-15}{2016-12-15} \\
-    \ganttbar[name=sunny]{Data from sunny condition}{2017-01-15}{2017-2-15} \\
+    \ganttbar[name=hardware]{Camera setup}{2016-12-05}{2016-12-10}\\
     \ganttbar[name=fall]{Fall progress report}{2016-11-15}{2016-12-04}\\
+    \ganttbar[name=data]{Data collection}{2016-12-10}{2017-2-15}\\
+    \ganttbar[name=rainy]{Data from raining condition}{2016-12-15}{2017-01-15} \\
+    \ganttbar[name=software]{Software setup}{2016-12-15}{2016-12-30}\\
+    \ganttbar[name=data]{Data collection}{2016-11-15}{2017-2-15}\\
+    \ganttbar[name=snowy]{Data from snowing condition}{2016-12-10}{2017-01-25} \\
+    \ganttbar[name=sunny]{Data from sunny condition}{2017-01-15}{2017-2-15} \\
+    \ganttbar[name=object]{Unusual object testing}{2017-02-15}{2017-3-15}\\
+    
     \ganttbar{Beta level release}{2017-02-05}{2017-03-05}\\
     \ganttbar[name=winter]{Winter progress report}{2017-02-01}{2017-03-15}\\
     \ganttbar{Engineer expo}{2017-04-15}{2017-05-25}\\
@@ -180,5 +187,13 @@ Assuming there are issues with the image recognition algorithms under certain co
   \caption{Gantt Chart: Timeline of Project Tasks}
 
 \end{figure}
+
+\section{Change Log}
+Updated the requirements of collecting our own data, and what we need to teat specifically in section 1.\\
+Minor grammar issues fixed in section 1 and 2.\\ 
+Updated the specific steps we are also required to do but we didn't realized before in section 3.\\
+Minor changes on the timeline based on what we have done till now\\
+Added change log section.
+
 
 \end{document}
