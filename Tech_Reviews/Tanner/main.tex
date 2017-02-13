@@ -12,115 +12,123 @@
 
 \title{Algorithm Overhead and Setup - Tech Review}
 \author{
-  \IEEEauthorblockN{Team (Group 32) name: Teaching AutoPilot to Dodge\\ Tanner Fry} \\
-  \IEEEauthorblockA{CS 461: Senior Capstone Fall 2016 \\ Oregon State University}
+	\IEEEauthorblockN{Team (Group 32) name: Teaching AutoPilot to Dodge\\ Tanner Fry} \\
+	\IEEEauthorblockA{CS 461: Senior Capstone Fall 2016 \\ Oregon State University}
 }
 \date{}
 
 \IEEEtitleabstractindextext{
 	\begin{abstract}
-    	The aim of my tech review research is to figure out the best way to implement and begin the testing process for the algorithm. Compared to my teammates I will be doing more of the technical overhead of the project, setting up the algorithm and environment necessary to test the datasets we put together. This document is put into three main sections; environment, algorithms, and functionality. Environment focuses on integrated development environment options, operating system limitations, and any outside libraries needed. Algorithms will focus mostly on the options at hand for testing the image recognition code, there are multiple options available to us. Finally on what we expect the code to do and handle be default, and what functionality we need out of it to complete our tasks.
+		The aim of my tech review research is to figure out the best way to implement and begin the testing process for the algorithm. Compared to my teammates I will be doing more of the technical overhead of the project, setting up the algorithm and environment necessary to test the datasets we put together. This document is put into three main sections; environment, algorithms, and functionality. Environment focuses on integrated development environment options, operating system limitations, and any outside libraries needed. Algorithms will focus mostly on the options at hand for testing the image recognition code, there are multiple options available to us. Finally on what we expect the code to do and handle be default, and what functionality we need out of it to complete our tasks.
 	\end{abstract}
 }
 
 
 \begin{document}
-
-\maketitle
-\IEEEdisplaynontitleabstractindextext
-\IEEEpeerreviewmaketitle
-
-\newpage
-
-\tableofcontents
-
-\newpage
-
-\section{Software Environment}
-    \subsection{Code}
-	The Cityscapes algorithm sets run off mostly python scripting. The code is available on GitHub at \url{github.com/mcordts/cityscapesScripts} with a decent amount of documentation alongside it. This code is mostly for handling and setting up the image recognition code to run. However from my research the code is designed to only run with the Cityscapes datasets be default. So a decent amount of overhead work will be required on our part to get the functionality in place that we need. Along with the documentation the team members at Cityscapes are more than happy take questions, suggestions, or input should we run into any of the above.
-    The scripts themselves are broken down into five main parts. Viewer scripts are designed to view the images and annotations within the datasets. Helper scripts and files are included by other scripts to support functionality. Preparation scripts are used to convert the "ground truth" annotation into a format used by the specific algorithms approach. Evaluation scripts are for validating of image recognition methods. And finally an annotation branch of scripts are used for labeling datasets passed through the code.
-    Thankfully the writers of the scripts also stuck a basic documentation level at the top. Along with this is a list of the core scripts we will need to use per dataset.
-    \subsection{Evaluation}
-    Once we intend to run out datasets through the provided code we will need to run it though the provided test images and submit our results to \url{http://www.cityscapes-dataset.net/submit/}. The Cityscape team is interested in points of failure in both other people's approach on their own. The results need to be formated in the label image names as labelIDs as per standard of the Cityscapes team. The images produced from our testing should have a pixel value class ID defined in labels.py. 
-    \subsection{Development Environment}
-    At the highest level the system should work with any machine or system that can run python scripting. That being said there are a lot of options with a lot of positives and negatives. For example on a Windows based system it will be a lot easier to migrate between using school and personal computers as most Engineering computers at OSU are Windows based. That being said both of my colleagues have Apple computers so using a OSX system also brings its own host of conveniences. However bouncing between systems might just be required as we are sharing the project, at which point setting up multiple environments is part of the overhead. From personal work experience it will take almost twice the time to figure out how to get the system working on more than one operating system.\\
-    Researching for the best Integrated Development Environment (IDE) turned up to be easy. Some of the main options were PyDev \url{http://www.pydev.org/} a simplified IDE for Python development, it plugs into Eclipse and is relatively simple to run. Another high profile option is PyCharm \url{https://www.jetbrains.com/pycharm/} which is an expansion of Jet Brains line of IDE options. I believe the later is our best option as it comes with the complete "package" of utility we need. It has a Python assistant, cross-technology development, and built-in development tools. Not to mention it is similar to the IntelliJ framework my team used in Software Development I. 
-  
-  
-    
-    
-
-    %Create video and image datasets that find or expose faults in the image recognition software. 
-    %Then work on and try to
-   
-    %\subsection{Definitions}
-    %\begin{tabu} to \hsize {|X|X[3,l]|}
-    %\hline
-    %Term & Definition \\
-    %\hline
-    %Volunteers & The people who interact with our project, and the target clients \\
-    %\hline
-    %Big Data & A large and complex data set, which is hard to deal with by traditional data processing applications, but extremely useful for the conditions analysis \\
-    %\hline
-    %Image recognition algorithm & Using high resolution video record any objects on the road, and using specific technique to analyze different conditions then make the reaction \\
-    %\hline
-    %\end{tabu}
-
-
-
-
-\section{Algorithms}
-    \subsection{Options}
-    Unfortunately we do not have options outside of Cityscapes for image recognition algorithms. However that is also the software we have been instructed to test for right now. If another option becomes available to test with we will do our best to migrate over and try it. The Cityscapes team has multiple algorithms to be tested, once we gain access to them, which is explained below. \\
-    All that being said, information on this section is limited as of now because of research. The Cityscape image recognition algorithms are for research only and can only be accessed by approved sources. I have made an account and submitted an "application" for access to the algorithms through the Cityscape Website, however they must approve our team before we are allowed to download and use the algorithm. In this case approval to access the algorithms is the critical path. This document will be updated when access is granted.
-    \subsection{Methods of Image Recognition}
-    To be filled in when access to the algorithms is granted. 
-        
-    
-\section{Functionality}
+	
+	\maketitle
+	\IEEEdisplaynontitleabstractindextext
+	\IEEEpeerreviewmaketitle
+	
+	\newpage
+	
+	\tableofcontents
+	
+	\newpage
+	
+	\section{Software Environment}
+	\subsection{Code}
+	The Cityscapes algorithm analysis sets run off mostly python scripting. The code is available on GitHub at \url{github.com/mcordts/cityscapesScripts} with a decent amount of documentation alongside it. This code is mostly for handling and setting up the image recognition code to run. However from my research the code is designed to only run with the Cityscapes datasets by default. So a decent amount of overhead work will be required on our part to get the functionality in place that we need. Along with the documentation the team members at Cityscapes are more than happy take questions, suggestions, or input should we run into any of the above.
+	The scripts themselves are broken down into five main parts. Viewer scripts are designed to view the images and annotations within the datasets. Helper scripts and files are included by other scripts to support functionality. Preparation scripts are used to convert the "ground truth" annotation into a format used by the specific algorithms approach. Evaluation scripts are for validating of image recognition methods. And finally an annotation branch of scripts are used for labeling datasets passed through the code.
+	Thankfully the writers of the scripts also stuck a basic documentation level at the top. Along with this is a list of the core scripts we will need to use per dataset.
+	\subsection{Evaluation}
+	Once we test our datasets the Cityscapes team has a handy way to turn in the dataset that fails to that others can use it to test with. The Cityscape team is interested in points of failure in both other people's approach and how to properly analyze those methods. The results need to be formated in the label image names as labelIDs as per standard of the Cityscapes team. The images produced from our testing should have a pixel value class ID defined in labels.py. 
+	\subsection{Development Environment}
+	At the highest level the system should work with any machine or system that can run python scripting. That being said there are a lot of options with a lot of positives and negatives. After much deliberation we discuss with Dr. Li and decided to run the algorithms on an OSU based server called Steed. The Steed server is GPU accelerated which will make processing images much faster. It is globally accessible to all of us, so we can work on things concurrently. The environment is Linux based, however we can create our own virtual environments to work in when running the algorithms, thereby eliminating the problem of having to manage extra environments or operating systems.\\
+	Researching for the best Integrated Development Environment (IDE) turned up to be easy. Some of the main options were PyDev \url{http://www.pydev.org/} a simplified IDE for Python development, it plugs into Eclipse and is relatively simple to run. Another high profile option is PyCharm \url{https://www.jetbrains.com/pycharm/} which is an expansion of Jet Brains line of IDE options. I believe the later is our best option as it comes with the complete "package" of utility we need. It has a Python assistant, cross-technology development, and built-in development tools. Not to mention it is similar to the IntelliJ framework my team used in Software Development I. That being said, once we figured out how to run things on the Steed server the need for any sort of GUI environment went away. 
+	
+	
+	
+	
+	
+	%Create video and image datasets that find or expose faults in the image recognition software. 
+	%Then work on and try to
+	
+	%\subsection{Definitions}
+	%\begin{tabu} to \hsize {|X|X[3,l]|}
+	%\hline
+	%Term & Definition \\
+	%\hline
+	%Volunteers & The people who interact with our project, and the target clients \\
+	%\hline
+	%Big Data & A large and complex data set, which is hard to deal with by traditional data processing applications, but extremely useful for the conditions analysis \\
+	%\hline
+	%Image recognition algorithm & Using high resolution video record any objects on the road, and using specific technique to analyze different conditions then make the reaction \\
+	%\hline
+	%\end{tabu}
+	
+	
+	
+	
+	\section{Algorithms}
+	\subsection{Options}
+	There are a multitude of options for image recognition algorithms to test linked on the Cityscapes web page. We have been instructed to test only the best algorithms so we plan to try four of the best algorithms first. Quality is more important than quantity when we are working with algorithm testing. \\
+	All that being said, information on this section is limited as of now because of research. The Cityscapes linked image recognition algorithms are for research only and can only be accessed by approved sources. I have made an account and submitted an "application" for access to the algorithms through the Cityscape Website, however they must approve our team before we are allowed to download and use the algorithm. In this case approval to access the algorithms is the critical path. This document will be updated when access is granted. Access has been granted and we have found the best two algorithms to test first. 
+	\subsection{Methods of Image Recognition}
+	It all depends on the algorithm we run, our first was the Berkeley FCN model which uses a form of machine learning and pixel image breakdowns to analyze images. This method has different option of how many splits to do, but the general theory is to break down the image into 8/16/32 levels of images and combined the analysis feedback from all of those images. Refer to these slides for more detail \url{https://docs.google.com/presentation/d/10XodYojlW-1iurpUsMoAZknQMS36p7lVIfFZ-Z7V_aY/edit}. Another method uses different scale qualities of images and does the same analysis on each. From there it then combines the data labeling it got into a single image and outputs that as the result. 
+	
+	
+	\section{Functionality}
 	\subsection{Dataset Testing}
-    What are the needs of the setup we are planning to put together for this project to meet all requirements? First we must be able to test the algorithms with our own datasets. This requires that we have a way to convert any video feeds or formats into proper form for the algorithms to handle. Thankfully a lot of this is handed to us via the python scripts already created by the Cityscape team. But we also need to get tangible results back out to find places of fault. This is again done for us thanks to the scripting already in place, we just needs to accept it in Cityscapes format and labeling style. Not a hard problem to solve if we chose to migrate away from that, we just need to write our own python scripts for labeling. That being said we see no immediate issues with the given format, and will stay with it unless a better method is found. The dataset feeds themselves must be broken down to a pixel level for object analysis to take place, typically this is done in a gray scale. Along with file conversions we also will needs to handle color manipulation if the algorithm requires it.
-    \subsection{Error Detection}
-Next we need to be able to detect faults in the image recognition software. Assuming the above labeling process is correctly done unknown objects will either call into the wrong type, or filter into an unknown category which will help us tremendously with testing. With simple scripting we should be able to pull out faults with ease, and in cases where the errors are not caught in the labeling process we will have to do eye level inspection. Our datasets where we want to target something specific should be rather short in interval, the Cityscape team processes and posts 5000 images per week. So we have a reasonable understanding of what we can do with out resources based off that.
+	What are the needs of the setup we are planning to put together for this project to meet all requirements? First we must be able to test the algorithms with our own datasets. This requires that we have a way to convert any video feeds or formats into proper form for the algorithms to handle. Thankfully a lot of this is handed to us via the python scripts already created by the Cityscape team. But we also need to get tangible results back out to find places of fault. This is again done for us thanks to the scripting already in place, we just needs to accept it in Cityscapes format and labeling style. Not a hard problem to solve if we chose to migrate away from that, we just need to write our own python scripts for labeling. That being said we see no immediate issues with the given format, and will stay with it unless a better method is found. The dataset feeds themselves must be broken down to a pixel level for object analysis to take place, typically this is done in a gray scale. Along with file conversions we also will needs to handle color manipulation if the algorithm requires it.
+	\subsection{Error Detection}
+	Next we need to be able to detect faults in the image recognition software. Assuming the above labeling process is correctly done unknown objects will either call into the wrong type, or filter into an unknown category which will help us tremendously with testing. With simple scripting we should be able to pull out faults with ease, and in cases where the errors are not caught in the labeling process we will have to do eye level inspection. Our datasets where we want to target something specific should be rather short in interval, the Cityscape team processes and posts 5000 images per week. So we have a reasonable understanding of what we can do with out resources based off that.
 	\subsection{Extras}
-    The topics here are things it would be good to have at our disposal during this projects life span. First thing is a way to organize datasets that need to be analyzed and those that have been. And a way to track and label them accordingly. If we end up processing a lot of datasets keeping track of them manually would be unnecessary. It would be smarter to label them on creation and then pass them through an automated process that does the work for us. This is something to be calculated when the time comes, creating the script to do the process automatically might be more time consuming than doing it by hand. 
-   Video or image converting would be nice to have. Thankfully there are many open source tools available to convert video file types, and OSX will convert file types when the .extension is changed between formats. For example changing between a .flv and a .mp4 requires just a change to the those extensions. 
-   
-
-
- 
- % Remember to use PST-Gantt as Nels suggested for the gantt chart
-\newcommand{\firstdayoffallterm}{2016-09-21}      % first day of fall term
-\newcommand{\startday}{2016-10-02}                % day groups assigned
-\newcommand{\fallprogressreportdue}{2016-12-05}   % finals week of fall term
-\newcommand{\alphareleasedue}{2017-02-13}         % week 6 of winter term
-\newcommand{\betareleasedue}{2017-03-20}          % finals week of winter term
-\newcommand{\winterprogressreportdue}{2017-03-20} % finals week of winter term
-\newcommand{\releasedue}{2017-05-15}              % monday prior to tentative expo date
-\newcommand{\expoday}{2017-05-19}                 % tentative expo date
-\newcommand{\finalreportdue}{2017-06-12}          % finals week of spring term
-\newcommand{\lastdayofspringterm}{2017-06-16}     % last day of spring term
-
-\newpage
-\bibliographystyle{IEEEtran}
-\bibliography{Sources}
-\begin{thebibliography}{12}
-\bibitem{PyCharm} 2000—2016 JetBrains s.r.o. All rights reserved. Developed with drive and IntelliJ IDEA
-\textit{Jet Brains at PyCharm.com}
-
-\bibitem{Pydev}  Brainwy Software Ltda, 2014-2016
-\textit{Brainwy at Pydev.org} 
-
-\bibitem{Cityscapes Scripts} https://github.com/mcordts/cityscapesScripts.
-\textit{Part of the Cityscapes team} Marius Cordts, Mohamed Omran.
-
-\bibitem{Cityscapes} https://www.cityscapes-dataset.com/
-\textit{Cityscapes subset of Daimler} 2016 Cityscapes Dataset · by Marius Cordts 
-
-\bibitem{Dr. Pedro Kroger} http://pedrokroger.net/choosing-best-python-ide/
-\textit{Choosing the Best Python IDE} Dr. Pedro Kroger
-
-\end{thebibliography}
-
+	The topics here are things it would be good to have at our disposal during this projects life span. First thing is a way to organize datasets that need to be analyzed and those that have been. And a way to track and label them accordingly. If we end up processing a lot of datasets keeping track of them manually would be unnecessary. It would be smarter to label them on creation and then pass them through an automated process that does the work for us. This is something to be calculated when the time comes, creating the script to do the process automatically might be more time consuming than doing it by hand. 
+	Video or image converting would be nice to have. Thankfully there are many open source tools available to convert video file types, and OSX will convert file types when the .extension is changed between formats. For example changing between a .flv and a .mp4 requires just a change to the those extensions. 
+	
+	\section{Change Log}
+	\begin{itemize}
+		\item Major changes to
+		\item Minor updating to definitions for accuracy.
+		\item Updated algorithms testing section to exclude camera blind spots, not something in our scope as of now.
+		\item Updated hardware and software information based on products we have used for certain tasks
+		\item Made changes to reflect that we are going to be testing algorithms from different developers and that those algorithms have their own machine learning knowledge base.
+		\item Added change log section 
+	\end{itemize}
+	
+	
+	% Remember to use PST-Gantt as Nels suggested for the gantt chart
+	\newcommand{\firstdayoffallterm}{2016-09-21}      % first day of fall term
+	\newcommand{\startday}{2016-10-02}                % day groups assigned
+	\newcommand{\fallprogressreportdue}{2016-12-05}   % finals week of fall term
+	\newcommand{\alphareleasedue}{2017-02-13}         % week 6 of winter term
+	\newcommand{\betareleasedue}{2017-03-20}          % finals week of winter term
+	\newcommand{\winterprogressreportdue}{2017-03-20} % finals week of winter term
+	\newcommand{\releasedue}{2017-05-15}              % monday prior to tentative expo date
+	\newcommand{\expoday}{2017-05-19}                 % tentative expo date
+	\newcommand{\finalreportdue}{2017-06-12}          % finals week of spring term
+	\newcommand{\lastdayofspringterm}{2017-06-16}     % last day of spring term
+	
+	\newpage
+	\bibliographystyle{IEEEtran}
+	\bibliography{Sources}
+	\begin{thebibliography}{12}
+		\bibitem{PyCharm} 2000—2016 JetBrains s.r.o. All rights reserved. Developed with drive and IntelliJ IDEA
+		\textit{Jet Brains at PyCharm.com}
+		
+		\bibitem{Pydev}  Brainwy Software Ltda, 2014-2016
+		\textit{Brainwy at Pydev.org} 
+		
+		\bibitem{Cityscapes Scripts} https://github.com/mcordts/cityscapesScripts.
+		\textit{Part of the Cityscapes team} Marius Cordts, Mohamed Omran.
+		
+		\bibitem{Cityscapes} https://www.cityscapes-dataset.com/
+		\textit{Cityscapes subset of Daimler} 2016 Cityscapes Dataset · by Marius Cordts 
+		
+		\bibitem{Dr. Pedro Kroger} http://pedrokroger.net/choosing-best-python-ide/
+		\textit{Choosing the Best Python IDE} Dr. Pedro Kroger
+		
+	\end{thebibliography}
+	
 \end{document}
