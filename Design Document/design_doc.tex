@@ -1,4 +1,4 @@
-\documentclass[10pt,draftclsnofoot,onecolumn,journal,compsoc]{IEEEtran}
+ss[10pt,draftclsnofoot,onecolumn,journal,compsoc]{IEEEtran}
 
 \usepackage[margin=0.75in]{geometry}
 \usepackage{graphicx}
@@ -23,9 +23,9 @@
 \date{}
 
 \IEEEtitleabstractindextext{
-	\begin{abstract}
+    \begin{abstract}
 
-	\end{abstract}
+    \end{abstract}
 }
 
 
@@ -61,28 +61,27 @@ Cityscapes is a subset of Daimler Automotive Company that is creating datasets a
 There are two major milestones for each algorithm testing process. 
 Algorithm required environment setting and unusual objects with different conditions testing. 
 We are planning to keep collecting on road images and video data while working on testing.\\
-By applying database technologies we can collect different weather conditions and categorize them as such. 
+By applying database technologies we can collect different weather conditions and different environments  categorize them as such. 
 Using machine learning algorithms to deal with the data we can see if the algorithm can provide a safer output than before. 
 Note we are not concerned about real time (0.1 sec) algorithm speed. 
 We will primarily use parameter testing groups with many images in them. 
 For example we have a full of images where it is snowing, then we keep changing the variables of objects color in the data images and continue testing.\\
 We can setup a test of moving unexpected objects and test them. 
 Randomly set up various conditions where objects suddenly appear to the front of cars, and then test how quickly the algorithm reacts and stops the vehicle by checking when the objects are recognized. 
-We put all these conditions onto the columns and all outputs onto the rows in a matrix (more on this later) so that we can combine the information and tell if any algorithms could cause a crash(Never recognize some specific objects).\\
+We put all these conditions onto the columns and all outputs onto the rows in a matrix (more on this later) so that we can combine the information and tell if any algorithms could cause a crash (Never recognize some specific objects).\\
 Finally, we will set up a global matrix, and divide the columns onto two parts with weather conditions testing and unusual objects testing. 
 In addition, dividing the rows onto three parts as well, for each testing outcome with the algorithms we have. 
 We then put all conditions onto the columns and all output onto the rows in the matrix so that we can cross reference the information to gain insight in how each algorithm performed and whether it is failing with a given condition.
 From that information we can try to determine which parts of the software algorithm we can try to fix or send those images failing the algorithms to designers.
 
 \subsection{Hardware}
-The hardware consists of the recording device: An HD dash camera, and storage unit: SD card and an external hard drive.\\
-The video footage that will be used to test the algorithms are primarily taken through the camera. The camera will be mounted on a car's windshield, and powered through a 12 volts outlet. The camera has a 170 degrees lens, which would capture a wider view of the road. The camera's recording dimension is 2306x1296P resolution. The camera can be used in both day and night time, since it supports night video recording.\\
-The SD card is of 128 GB, while can take up to 20 hours of video footage. The external hard drive, which is a 5 TB, will be used to store the footage from the SD card when the SD card is full. The footage has to be stored from the SD card roughly every 10 to 20 hours of video recording. Otherwise, the camera will overwrite the oldest file in the SD card.\\
-The camera is turned on manually before the driver starts to drive the car. The video recording would take place in both the day and the night. However, during the night time, the recording will be limited to the beam of headlights. Hence, video taking during the day is preferred. \\
-Video recording will take place mostly in Oregon, including highways, freeways and country sides. Thus, will give us an opportunity to test different types of objects on the roads. \\
-After recording, we are going to test the image-recognition algorithms on different objects. Since there is so much footage we determined that the best method of analysis is to grab frames from the video feeds at an ten second interval and then down scale the image to something manageable for the hard to handle. For example, regular cars are most likely to be recognized by the algorithms, whereas unusual types of vehicals could fail to be given a label correctly.\\
+The hardware consists of the recording device: A 1080 HD dash camera, an SD card, and an external hard drive.\\
+The video footage that will be used to test the algorithms are primarily taken through the camera. The camera will be mounted on a car's windshield, and powered through a 12 volts outlet. The camera has a 170 degrees lens, which would capture a wider view of the road. The camera's recording dimension is 2306x1296P resolution. The camera can be used in both day and night time. However, during night time, the camera vision is limited to the length of the headlight beam in dark roads.
+The SD card is of 128 GB, which can take up to 20 hours of video footage. The external hard drive, which is a 5 TB, will be used to store the footage from the SD. The footage has to be stored from the SD card roughly every 10 hours of video recording. Otherwise, the camera will overwrite the oldest file in the SD card.\\
+The camera is turned on automatically as the driver starts the car. The video recording would take place in both the day and the night.\\
+Video recording will take place in Oregon, Califorina, and Nevada. We are focusing on highways, freeways and country sides. Thus, will give us an opportunity to test different types of objects on the roads. \\
+After recording, we are going to test the image-recognition algorithms on different objects. Since there is so much footage we determined that the best method of analysis is to grab frames from the video feeds at an ten second interval and then down scale the image to something manageable for the hard to handle. For example, regular cars are most likely to be recognized by the algorithms, whereas unusual types of vehicles could fail to be given a label correctly.\\
 For all of our video frame capture we used VLC an open source tool for videos. For the image down scaling we used default OS tools and even some scripting for certain images.\\
-Additional videos will be requested from Oregon's Police Departments and Oregon State Car Club.
 
 
 \subsection{Software Overhead}
@@ -120,7 +119,7 @@ The system then drove into the side of the semi assuming the path was clear, kil
 Since the algorithm of Telsa 2016 car failed to recognized the white semi-truck, we are approaching the research with the hypothesis that the algorithms would fail to recognize novel objects. Novel objects are objects that the algorithms producer did not program or test the algorithms to recognize, or did not test the objects under different weather or light conditions. 
 
 
-\subsection{Methodology}	
+\subsection{Methodology}    
 To thoroughly test as many cases as possible we are setting up a matrix of testing scenarios and comparing that to the results of other algorithms. 
 Each algorithm will be ran with the same datasets and then the results will be semantically marked up using the python scripts provided by Cityscapes. 
 These markups can then be compared across each other to figure out which ones perform better.
@@ -149,12 +148,12 @@ We have described a direction of our project and some milestones with how we pla
       
 \section{Change Log}
 \begin{itemize}
-	\item Revised goals to be more focused on algorithm testing quality over number of algorithms tested.
-	\item Minor updating to definitions for accuracy.
-	\item Updated algorithms testing section to exclude camera blind spots, not something in our scope as of now.
-	\item Updated hardware and software information based on products we have used for certain tasks
-	\item Made changes to reflect that we are going to be testing algorithms from different developers and that those algorithms have their own machine learning knowledge base.
-	\item Added change log section\\
+    \item Revised goals to be more focused on algorithm testing quality over number of algorithms tested.
+    \item Minor updating to definitions for accuracy.
+    \item Updated algorithms testing section to exclude camera blind spots, not something in our scope as of now.
+    \item Updated hardware and software information based on products we have used for certain tasks
+    \item Made changes to reflect that we are going to be testing algorithms from different developers and that those algorithms have their own machine learning knowledge base.
+    \item Added change log section\\
 
 Tanner Fry works log above.\\
     
@@ -164,6 +163,14 @@ Tanner Fry works log above.\\
     \item Revised the conclusion to summarize what we did for designing what technologies we are using with key words.\\
      
 Xilun Guo works log above.\\
+
+    \item Edited Technology Overview: Algorithm testing. Added more details of the test cases of our testing material, which are video footage, and included different environments and weather conditions. 
+    \item Changed the night vision specification, since the camera does not support night vision such as inferred.
+    \item Changed the processes of the transferring video from the SD cars, since the SD card fills up faster than expected.
+    \item Changed the location of the video footage from Oregon to Oregon, Nevada, and California.
+    \item Changed plans for external video footage, such as request videos from Oregon’s State Police, since the videos collected were more than enough.
+
+Basil Al Zamil works log above.\\
 
 \end{itemize}
 
