@@ -7,14 +7,14 @@
 \title{Unusual Objects on Road}
 \author{
   \IEEEauthorblockN{Team (Group 32) name: Teaching AutoPilot to Dodge\\ Basil Al Zamil} \\
-  \IEEEauthorblockA{CS 461: Senior Capstone Fall 2016 \\ Oregon State University}
+  \IEEEauthorblockA{CS 462: Senior Capstone Fall 2016 \\ Oregon State University}
 }
 \date{}
 
 \IEEEtitleabstractindextext{
-	\begin{abstract}
-		The goal of my technology review is to gather information and become familiar with the technologies that will be used in gathering videos and images, which is the testing surface and input of our project, where we aim to break the algorithms using different objects video taped on the road in different climates and in different geographical areas. In this document, I will be discussing the three sections of my technology review: Cameras, Camera Mount, and Video Taking.
-	\end{abstract}
+    \begin{abstract}
+        The goal of my technology review is to gather information and become familiar with the technologies that will be used in gathering videos and images that will be used as the testing surface of our project, where we aim to break the algorithms using different objects video taped on the road in different climates and in different geographical areas. In this document, I will be discussing the three sections of my technology review: Cameras, Camera Mount, and Video Taking.
+    \end{abstract}
 }
 
 
@@ -31,50 +31,33 @@
 \newpage
 
 
-\section{Camera}
+\section{Data Collection}
+\subsection{Overview}
 
-The camera is our main source of input for our research project, since the main goal of the project is to find novel objects to the image recognition software that fails to recognize. Hence, we would ensure that the camera would gather as much data as possible and in different environments that provides different objects. //Moreover, the quality and features of the camera can make a great difference in testing the software. However, The quality and features of the camera are limited to the camera that would be supplied to us. 
+Since the main goal of the project is to find novel objects to the image recognition software that fails to recognize, capturing video footage through our camera is the main source of input. Thus, the quality of the camera has to be a minimum of 1080 HD. Additionally, we would want to capture novel objects on tape, so taking videos in different types of environment is advised.   
 \\
-We will be using a camera provided by our team member Tanner Fry. We would also use cameras provided by Oregon State University. Also, Dr. Li may be provide us with a camera that are best compatible with the cityscapes software.
 
-\subsection{Types} Infrared cameras would allow us to take videos at night. On the other hand, regular cameras, that would be provided to test the software with, are limited by the day light or by the distance of car's headlights beam at night. 
-\\
-Different weather conditions can raise a concern when choosing a camera. Water proof camera, that are designed to be mounted on the exterior of cars, can tolerate different wheather conditions such as rain and snow. Weather proof cameras would give a better vision of the road than cameras that are mounted on the dash, since windshields can interfer with the accuracy of image recognition of objects on the road. For example, rain or snow can on the windshield can block or hinder the quality of the video taken. In addition, small obstacles can stick on the windshield and hinder or partly block the lenses from taking accurate images of objects on the road.
-\\
-Hence, the ideal camera type would be to have infrared cameras that are mounted on the exterior of the vehicle, such as on the fender or on the top of the vehicle.
+\subsection{Camera Type}
+We will be mounting the car on the interior side of the windshield of the car. Thus, providing a standard video of the road. However, we need to make sure that the windshield is clean at all times. That way, we can insure that the camera is not blocked by small object in front of the lens. \\
 
+We considered inferred camera, but we decided to discard the idea them since taking video footage during the day would suffice. We were also thinking about mounting the camera on the exterior of the car, but that was also an overhead that was not necessary to accomplish our goal to find novel object to the object-recognition software.\\
 
-\subsection{Quality}
-The quality of the camera is crucial because it can change the produce or eliminate errors of recognizing objects. Hence, the higher the quality the more accurate our testing would be. 
+One downfall of mounting the camera on the windshield is that the possibility of the interference with the accuracy of image recognition of objects on the road. For example, rain, snow, or other small objects on the windshield can block or hinder the quality of the video taken. Resulting in hindering or partly blocking the lenses from taking accurate images of objects on the road.
 
-Camera qualities ranges from 480p, 720p, to 1080p, and higher. Although the camera quality is important, the quality of the camera will be limited to the camera that will be provided to us. However, the best camera would be a high definition camera, such as 1080 pixels and above. These cameras would provide accurate images of the objects, especially when the car is in motion. Moreover, the writing speed has to be compatible with the camera in order for them camera to work probably, which we will be discuss in the Video Taking section.
+\subsection{Criteria}
+The criteria consists of the quality of the camera. The quality of the camera is crucial because it can produce or eliminate errors associated with recognizing objects. Hence, we need the camera to be a minium of 1080 HD, in order for the software to accurately recognize objects. \\
 
+Camera qualities ranges from 480p, 720p, to 1080p, and above. Although the camera quality is important, the quality of the camera will be limited to the camera provided to us. The camera that was provided to us by our client, Dr. Li, was a 1080 HD camera, which is the quality needed to avoid image recognition errors that are produced by the camera, rather than the algorithms. The 1080HD cameras can provide accurate images of objects that will be captured on the road, especially when the car is in motion.\\
 
-\section{Mounting}
-\subsection{Challenges}
-However, there are a couple of differences that may limit our research. First, Tesla’s cars have multiple cameras pointing towards multiple direction of the road, such as to the front of the car and to the rear. However, our camera will be pointing forward only. Second, the cameras on automated driven cars are embedded in cars' body, but ours would be mounted on the windshield, the top of the car, and/or on the fenders. This may cause errors due to weather on the windshield, such as rain or snow on the windshield, or errors in mounting the camera correctly, which may cause issues with recognizing objects that may not exist on the real automated cars. 
+Another criteria would be the writing speed of the camera’s memory card. The writing speed of the memory card has to be compatible with the camera, in order for the camera to avoid choppy video storage and to prevent recording lags. An example of choppy video writing would be when the writing speed on the SD card is below 5 MB per second, and the camera capture videos in 3840x2160 (also known as 4K).\\
 
-Regardless, most of the objects will be in front of the car, rather than in the rear. Hence, the cameras the are pointing to the front of the vehicle are the most important cameras.
+Another issue to keep in mind is that video taping the objects will take place while the car and the objects are in motion. After we take videos of the objects, we will be extracting images from the videos, which are used as an input to test the image recognition software with. Since the objects are in motion, the writing speed has to compatible, or even above the recommended compatibility, in order to capture accurate images of the objects in motion.\\
 
-\subsection{Different Type of Cameras}
-Mounting the camera will depend on the type of camera that will be provided. A regular camera, such as a webcam, would simply be mounted on the windshield, where it can collect videos while the car is in motion. The windshield is advised to be clear at all times in order for the software algorithm to recognize objects without external errors, such as dirty windshield. On the other hand, if the camera provided was a weather proof camera, we can mount the camera on the outside of the vehicle, which would gather a clearer video of the camera. 
+Most dash-cams requires at least “Class 6” writing speed for 1080 HD, which is 6 MB/s to 20 MB/s. However, it is recommended to use Class 10 writing speed, which writes in 10 MB/s to 30MB/s. Hence we will be using Class 6 as minimum, and an 1080 HD camera.\\
 
-The type of the camera would give us the options of mounting the camera on different parts of the vehicle. For example, if the camera was a whether proof and designed to be mounted on the outside of the vehicle, we would rather mount it on the exterior of the vehicle. However, since we are limited with the camera that would be provided to us, we are expecting to have a regular camera that would be mounted on the dash.
+Thus, we chose our camera to supports up to Class 10 writing speed, and our SD memory to be Class 10.
 
-\subsection{Multiple Cameras}
-Multiple cameras can be used in order to collect data and objects from different angles. Thus, this may provide and additional input for testing and debugging purposes. For example, the software may not recognize an object from a certain camera on a the right angle of the car, but it would from dash camera. Hence, mounting different cameras would provide a great additional surface to test our software with.
-
-Hence, depending on the number of cameras that we can use, we would mount two cameras on the vehicle. One on the side of a car, such as on the fender, and another on the top of the car. This way, when we find a novel object, we can re-test the same object from different angles.
-
-
-\section{Video Taking}
-
-\subsection{Environments}
-Although Oregon would be our main area of collected videos, we will also be collecting data from California and Nevada states. This will provide the software with a different climate and weather conditions to test the software. Also, we will be collecting videos in both country roads and city streets. Videos will be collected through driving in freeways, highways, cities, and in country sides. 
-\\
-Moreover, we are also reaching out to people in different areas of the country, who would volunteer to mount cameras on their vehicle. That way, we would gather more videos that would have different climates and different objects on the road. Thus, we would have a great amount of input to test our software with, which increases the probability of finding novel objects.
-
-\subsection{Memory}
+\subsection{Storage}
 Since high quality cameras will generate a large amount of data (ideally 1080p and above), we would need a large memory to store the videos recorded.
 
 \captionsetup{justification=centering}
@@ -98,17 +81,60 @@ Since high quality cameras will generate a large amount of data (ideally 1080p a
 \end{center}
 \end{table}
 
-Ideally, we would have a memory card of size ranging from 64 GB to 128 GB card. Videos can be stored on Memory Card and in a continuous video taping for 10 to 40 hours. After the memory card is full, the videos can be saved on an external storage, such as a hard drive. If smaller memory card sizes were used, some issues may arise with with collecting data, such as overwriting old videos if the video taker didn’t store the videos on time, such as within 2-3 hours in case a 8 GB memory card was used.
+Ideally, we would have a memory card of ranging size of 64 GB to 128 GB card. Videos can be stored on memory card and in a continuous video taping for 10 to 40 hours with the memory cards ranging from 64 GB to 128 GB. When the memory card becomes full, the videos can be saved on an external storage.\\
 
-\subsection{Writing speed}
-Writing speed is important in order to avoid choppy video taking and and to prevent recording lags, especially if the videos are taken in 1080p and above. Another reason that makes writing speed important is that we usually be video taping objects while the car is traveling in motion. Hence, we need a fast writing speed so we can accurately capture the objects.
+One concern is when the smaller memory card sizes were used, some issues may arise with with collecting data, such as overwriting old videos. Hence, the video taker is advised to regularly check the free space available in the camera’s memory card, and ensure overwriting does not occur unless the videos collected were stored in the external hard drive.\\
 
-Most dash-cams requires at least “Class 6” writing speed for 1080 HD, which is 6 MB/s to 20 MB/s. However, it is recommended to use Class 10 writing speed, which writes in 10 MB/s to 30MB/s. 
+Thus, our client, Dr. Li, advised us to use 128 GB for the camera's SD card, which would store up to 12 hours of video recoding, before is starts to overwrite.
 
-Hence we will be using Class 6 as minimum, and an 1080 HD camera, combined with a 128 GB memory card.
+For the hard drive, we would be using a 5 TB hard drive. 5 TB is large enough to store the hours of video footage that we will be taking and gathering from other resources.\\
 
-\subsection{Laws and Regulations Regrading Video Taking} For law and regulations, the dash camera is legal in the united states by federal law by the First Amendment Right in public places. However, it is not legal on private properties. Hence, the driver should use caution regarding private properties.
+\subsection{Additional Resources}
+Besides our own video taking, we have the option to collect videos from other resources. For example, we can contact Oregon’s police department and ask if we can have some video footage recorded by police vehicles for our research. Additionally, Oregon State Car Club use cameras in their cars, such as on the fenders or dash, and record the road while they drive or race. Hence, they would make a great resource for our data collection.
 
+
+\section{Methods}
+\subsection{Camera Position}
+We have a number of options to where we can mount the camera on, such as on the top of the car, on the dash, or on the rear. In automated cars, the front camera is the most important camera. Thus, the default option is to have the camera mounted on the dash.\\
+
+The type of the camera would give us the options of mounting the camera on different parts of the vehicle. For example, if the camera was a whether proof and designed to be mounted on the outside of the vehicle, we would rather mount it on the exterior of the vehicle. However, since we are limited to the camera that would be provided to us, we are expecting to have a regular camera that would be mounted on the dash of the car.\\
+
+However, we are to mount the camera on the windshield of the car, since Dr. Li advised us that mounting the camera on the windshield would sufficient, and other options of mounting the camera, such as on the body, is unnecessary. 
+
+
+
+\subsection{Multiple Cameras}
+Multiple cameras can be used in order to collect data and objects from different angles. Thus, this may provide and additional input for testing and debugging purposes. For example, the software may not recognize an object from a certain camera that is positioned on a the right angle of the car, but it would recognize the object from the dash camera. Hence, mounting different cameras would provide a great additional surface to test our software with.\\
+
+Depending on the number of cameras that we can use, ideally we would mount two cameras on the vehicle. One on the side of a car, and another on the top of the car. This way, when we find a novel object, we can re-test the same object from different camera that captures the same images from a different angle.\\
+
+Eventually, we were only using one single camera to collect video footage, which was the camera that is mounted on the windshield. 
+
+
+\subsection{Variables For Experiment}
+Although Oregon would be our main area of collecting videos, we will also collect data from California and Nevada states. This will provide the software with a different climates to test the software. Also, we will be collecting videos in both country roads and city streets. Videos will be collected through driving in freeways, highways, cities, and in country sides. Additionally, we are also reaching out to people in different areas of the country, who would volunteer to mount cameras on their vehicle. That way, we would gather more videos that would have different climates and different objects on the road. Thus, we would have a larger variety of inputs to test our software with, which increases the probability of finding novel objects.
+
+
+\section{Limitation}
+
+\subsection{Law}
+The dash camera is legal in the united states by federal law by the First Amendment Right in public areas. However, it is not legal on private properties. The driver should use caution regarding private properties.\\
+
+\subsection{Equipment}
+There are a couple of differences between automated driven cars and our experimented data collection method, which may limit our research. First, automated driven cars, such as Tesla’s cars, have multiple cameras pointing towards multiple direction of the road, such as to the front of the car and to the rear. Our camera will be pointing forward only. Regardless, most of the objects will be in front of the car, rather than in the rear. Hence, the cameras the are pointing to the front of the vehicle are the most important cameras.\\
+
+Second, the cameras of automated driven cars are embedded in cars’ body, whereas ours would be mounted on the windshield or on the top of the car. This may cause errors in video taking due to the climate, such as if the lenses are blocked by rain or snow. Another error that may occur is in mounting the camera. The mounting hardware must be tested regularly in order to ensure that the camera is not moving.
+
+\section{Change Log}
+    \begin{itemize}
+        \item Updated the overview to target the failure of the algorithm, which is the goal of our project.
+        \item Deleted the inferred camera information, since we are not using inferred cameras.
+        \item Added a downfall of windshield cameras
+        \item We thought that high definition camera are better. However, Dr. Li informed us that we only need to have a 1080p camera, and that a higher definition would not make a difference in the accuracy of the object recognition software.
+        \item updated the out camera and SD card writing speed, which met the criteria of the tech review research.
+        \item updated with the decision of where to mount the camera, which was simply on the windshield of the car.
+        \item As for Multiple Cameras, we ended up using one camera.
+    \end{itemize}
 
 \end{document}
 
