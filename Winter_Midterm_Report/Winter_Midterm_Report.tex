@@ -1,0 +1,215 @@
+\documentclass[10pt,draftclsnofoot,onecolumn,journal,compsoc]{IEEEtran}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tabu}
+\usepackage[english]{babel}\usepackage[numbers]{natbib}
+\usepackage{natbib}
+\usepackage{longtable}
+\usepackage{pgfgantt}
+
+
+\renewcommand{\linespread}{1.0}
+
+%design doc
+\title{Progress Report \\
+Unusual Object on the Road}
+\author{
+  \IEEEauthorblockN{Team (Group 32) name: Teaching AutoPilot to Dodge\\ Basil Al Zamil, Xilun Guo, and Tanner Fry} \\
+  \IEEEauthorblockA{CS 461: Senior Capstone Winter 2017 \\ Oregon State University}
+}
+\date{}
+
+\IEEEtitleabstractindextext{
+	\begin{abstract}
+	In this document we discuss our progress on our Capstone project from the end of last term to now the midterm of winter. It's including the short summary of last term progress, information on our current status, progress, things we are working on, improvements, and problems we encountered, solutions. Also, the descriptions of experimental design and the sample images of testing results are covered in the end.
+	\end{abstract}
+}
+
+
+\begin{document}
+% cover page    
+    \maketitle
+    \IEEEdisplaynontitleabstractindextext
+    \IEEEpeerreviewmaketitle
+
+    \newpage
+% catalog    
+    \tableofcontents
+ %\resizebox{\textwidth}{!}
+    \newpage
+% content   
+\section{Introduction}
+\subsection{Recap}
+%The Unusual Objects on the Road project goal is to collect a dataset consisting on images and video frames from a vehicles. 
+%Based on the Tesla crash in June 2016 in which a person was killed we believe that there are significant problems with image recognition algorithms. 
+%This stems from findings that the software used in the Tesla vehicle incorrectly registered a Semi-truck as a cloud due to the angle of sunlight reflecting off of it. 
+%Our goal is to compile a set of images from the perspective of an autonomous car that cause a large portion of image recognition algorithms to fail.\newline
+%To do this we are going to collect video feeds from dashboard cameras and pull out images from the video feeds at intervals. 
+%We then will filter out the best images which have test conditions we want. From there we will download individual image recognition algorithms available from the list on the Cityscapes website and test our dataset against each teams software. 
+%This should give us valuable information on the safety of these types of algorithms and where their faults lie. 
+%This information, feedback, and data can then be handed back to the algorithm designers to hopefully improve the algorithm and save lives in the future.
+
+
+\section{Current Progress}
+We collected our own dataset during the winter break by recording video on the road. Basically, we have got most conditions for testing the algorithms, including rainy and snowy(bad weather), sunny(straight lighting effect), and lots of different types of cars on the road. 
+Rather than using Linux box to run the algorithms as our plan at the first place, we apply to use the OSU steed server. 
+It's accelerated by GPU, which is super helpful for our project as large amount of high quality images testing. 
+After we got the permission to login to the server and access to create or edit folders and files, we started to set up the running environments for two different image recognition algorithms, FCN 8s and PSPNet.
+Then we have done around 15 images each testing on three different conditions using both algorithms above.
+We try hard to follow the instruction described in Github, and applied some files to make the algorithms clearer(suggestion from client). 
+Finally, we got some expected images results, but some of others are looked abnormal, which could be caused by a lot of reasons such as algorithm failed, incorrect setting, or bad images quality. Unfortunately, we haven't got that far with results analysis until now, but those are the progress we went through from the end of last term till now.  
+
+
+%\begin{itemize}
+%\item one 
+%\item two
+%\end{itemize}
+
+\section{Remaining Work}
+The main goal of our project is trying to find out some images within some conditions can make the algorithm fail to recognize some specific objects in the actual images. 
+So what we have to do is continue testing the two algorithms we have setup using the data we collected and the data will be collected or downloaded online.
+Also, as requirement from our client, we have to setup another one or two algorithms as well.
+So totally we have to test at least three algorithm, and provide detailed and logical analysis within selected images results in all conditions.
+Hopefully, if we can make sure the specific algorithms fail to recognize some objects with all setting is correct as instruction, we will post those actual images to the Internet as sample dataset and have other people or companies try testing their algorithms.
+
+\section{Problems Encountered and Solutions}
+\subsection{Permission in Steed Server}
+Before we are recommended to use the OSU Steed server, we planed to use the Linux box. 
+It indeed takes us a week to get full permission to access it and modify files in it, which we did not consider this period of time would be used. 
+We emailed the IT person who takes charge of the server permission, in order to access it. 
+We got help from him, our client and his PHD student to get the permission on modify files by adding new group into the .bashprofile and changing from their end.
+
+\subsection{Algorithms Running Environment Setup}
+The first step always be the toughest one. Due to no permission on updating in the server, we couldn't find a way to run the algorithms using latest version of python script and numpy.
+We had a meeting with Jialin, a PHD student of our client, and she provided us a lot of information and techniques.
+With the great help from her, we know how to run the algorithms using virtual machine, so we are not prevented from no permission. 
+However, each of us got different error while running the algorithm.
+With more helps from Jialin and Googling, we finally figure it out by adding export two PATH in .bashrc file and running image recognition software while ssh to the Steed server.
+
+
+\subsection(Experimental Design)
+For this project, we had a steed server set up for our and granted for our group, in order to start the testing and experiment processes. 
+However, the processes did not go as smooth as we wanted. 
+We were faced with a multiple  road blocks that required us to reach further assistance from our client. 
+Our client, Dr. Li, asked Jialin Yuan, who is a graduate student at OSU, to help us setting up our experimental environment, steed.
+
+We were granted access to the steed server, which allows us to work with GPU test our algorithms. 
+From there, we are uploading our test images, which are extracted frames from our video footage, to test our object-recognition algorithm.
+
+
+\subsection{Unexpected Test Results}
+The expected results images for us should be all trees, people, and cars are able to be recognized by the FCN algorithm. 
+At least usual objects should be recognized as different colors, but the results we got is only black as background and gray as cars.
+After the meeting with client, we were suggested to apply some default module to the algorithm to make it cleaver enough before test our data.
+On the other hand, we also got another commend to change scale or ratio to see more objects in the result images.
+We tried both solution to make it works, but we still haven't got what we expected since we couldn't find the correct way to follow those two suggestions.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Weekly Progress}
+
+\subsection{Winter Break}
+\begin{itemize}
+\item Activities: 
+We collected Data and did some background work to prep for the term. Basil attached a camera to his car dash before he went on a roadtrip.  
+\item Problems: 
+Lack of communication over the break.
+\item Solutions: 
+Started using
+\end{itemize}
+
+\subsection{Week 1}
+\begin{itemize}
+\item Activities: 
+Touched base with each group member and started working out plans for the term. Figured out a schedule that works with us all this term. Communicated with Shivani and Dr. Li on meeting times. 
+\item Problems: 
+None
+\item Solutions: 
+None
+\end{itemize}
+
+\subsection{Week 2}
+\begin{itemize}
+\item Activities: 
+We came to the conclusion that we needed a concurrent work place and environment space to develop and work with the algorithms we are going to test. Our plan was to get a Linux box from Kevin and set it up remotely so that we could all connect to it and work on it from anywhere. 
+\item Problems: 
+The Linux box setup process was going to take some time. We also discussed some things with Dr. Li that changed our plans.
+\item Solutions: 
+We adjusted our schedule for the delay on the box setup, however Dr. Li suggested we use an OSU server. 
+\end{itemize}
+
+\subsection{Week 3}
+\begin{itemize}
+\item Activities: 
+We came to the conclusion that the OSU server (Steed) would be a better option than the Linux box for working with the algorithms. Specifically because it is much stronger, has more resources, is easier to access, and is GPU accelerated so it has much greater throughput. We met with Jialin one of Dr. Li's grad students, she was extremely helpful in teaching us what we needed to know and helping when we ran into problems. 
+\item Problems: 
+There was a massive amount of overhead to setting up algorithms on Steed which really delayed our progress. Specifically we ran into the problem of not having access to the server to start with.
+\item Solutions: 
+We sent off an email to the IT department requesting access. 
+\end{itemize}
+
+\subsection{Week 4}
+\begin{itemize}
+\item Activities:
+Spent most of this week working through roadblocks and getting issues out of the critical path. We uploaded images to the server to start testing with, but overall was a very technical week with a lot of problems to solve.
+\item Problems: 
+We got access, however we then did not have access to the all of the server files. The FCN algorithm which is the first we wanted to get up and running had issues with libraries. Also the FCN outputs ended up being not what we wanted at all. Also we ran into an issue with our bashrc file that was creating an infinite process spawning loop to occur locking us out of the server.
+\item Solutions: 
+The server access was fixed after a couple more emails to IT. The algorithm issues required some help from Jialin, but we figured them out. The FCN outputs are still not what we want, but we got some feedback from Dr. Li on what could be going wrong and what steps to take next. The bashrc issue required more emails to IT to solve. 
+\end{itemize}
+
+\subsection{Week 5}
+\begin{itemize}
+\item Activities: Jacky and Tanner did a decent amount of work getting the FCN algorithm more put together, there are still some issues but we have results that find cars within the images at the minimum. Started work on a second algorithm called PSPNet pyramid scheme algorithm, so far setup is coming along. We met with Dr. Li to discuss roadblocks and the plan for the rest of the term. Had a productive meeting with Jialin to fix some issues with the algorithm. 
+\item Problems: 
+Had some productivity issues because Basil was sick, but hopefully we get caught up before the end of week 6. The FCN results are still not complete and we are continuing to trouble shoot. 
+\item Solutions: 
+Meetings with both Jialin and Dr. Li helped when issues arose this week, but nothing can be done about the common cold. 
+\end{itemize}
+
+\section{Team Members' Work}
+\subsection{Tanner's Work}
+Just to recap, I did most of the progress report work on the weekly breakdown subsection and a large amount of document editing across the board.
+As for work throughout the term I feel that I have been handling the lions share or the communication between client, TA, and instructors. Along with doing a large portion of the technical work on the algorithms and setup. 
+
+\subsection{Xilun's Work}
+I summarized the current progress including what we have done till now as well as what is the current status we are at. Also, I described what remaining works we have left and what is the plan to accomplished them step by step. 
+In addition, I briefly stated a number of problems we encountered and the solutions for each of them.
+During the first half of this term, I mainly focus on researching the way to set up the environment for FCN algorithm running and contacting with professional person for some deep helps of setup things in Steed server. 
+I also made some efforts on setting up testing case for algorithm to output the result images, but it is not tough to do. 
+I just need to make every steps carefully for this task. 
+
+\subsection{Al Zamil's Work}
+I wrote the description of the experimental design, and included images of the project from our collected video footage. 
+Also, I was the person in charge of collecting video footage, which I collected over 40 hours of video footage over winter break and winter term.
+The video footage were the test cases of our project, and I made sure that the videos taken were taken in different environments, including in country side and in cities in different states across Oregon, California, and Nevada.
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{Sources}
+\begin{thebibliography}{12}
+
+\bibitem{Cityscapes Scripts} https://github.com/mcordts/cityscapesScripts.
+\textit{Part of the Cityscapes team} Marius Cordts, Mohamed Omran.
+
+\bibitem{Cityscapes} https://www.cityscapes-dataset.com/
+\textit{Cityscapes subset of Daimler} 2016 Cityscapes Dataset · by Marius Cordts 
+
+\bibitem{Dr. Pedro Kroger} http://pedrokroger.net/choosing-best-python-ide/
+\textit{Choosing the Best Python IDE} Dr. Pedro Kroger
+
+\end{thebibliography}
+        
+\end{document}
